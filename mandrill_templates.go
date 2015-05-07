@@ -117,7 +117,7 @@ func (a *MandrillAPI) TemplateRender(templateName string, templateContent []Var,
 	var params map[string]interface{} = make(map[string]interface{})
 	params["template_name"] = templateName
 	params["template_content"] = templateContent
-	params["merge_vars"] = mergeVars
+	params["global_merge_vars"] = mergeVars
 	err := parseMandrillJson(a, templates_render_endpoint, params, &response)
 	var retval string = ""
 	var ok bool = false
